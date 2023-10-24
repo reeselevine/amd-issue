@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 
   program.run();
 
-  std::cout << "buf[150]: " << buf.load<uint>(150) << "\n";
+  std::cout << "buf[2]: " << buf.load<uint>(2) << "\n";
 
   // Cleanup.
   program.teardown();
