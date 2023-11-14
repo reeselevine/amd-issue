@@ -14,8 +14,8 @@ clean:
 easyvk: easyvk/src/easyvk.cpp easyvk/src/easyvk.h
 	$(CXX) $(CXXFLAGS) -Ieasyvk/src -c easyvk/src/easyvk.cpp -o build/easyvk.o
 
-kernel: kernel.cpp kernel.spv
+kernel: kernel.cpp copy-spv
 	$(CXX) $(CXXFLAGS) -Ieasyvk/src build/easyvk.o kernel.cpp -lvulkan -o build/kernel
 
-%.spv: %.wgsl
-	tint $< -o build/$@
+copy-spv:
+	cp kernel.spv build
